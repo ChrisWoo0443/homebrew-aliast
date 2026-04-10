@@ -1,22 +1,22 @@
 class Aliast < Formula
   desc "Ghost-text autocompletion and natural-language commands for zsh"
   homepage "https://github.com/ChrisWoo0443/AliasT"
-  version "0.1.0"
+  version "1.2.0"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.arm?
       url "https://github.com/ChrisWoo0443/AliasT/releases/download/v#{version}/aliast-aarch64-apple-darwin.tar.gz"
-      sha256 "e44783b183acf28ff7c08b12e9be0d2e94a9d1b1bb64dff649937f9ae3e7035f"
+      sha256 "c9d3b393151cec13f28fd2f1bfc90ec2208aea8c55e72dde1465182f11e6484a"
     elsif Hardware::CPU.intel?
       url "https://github.com/ChrisWoo0443/AliasT/releases/download/v#{version}/aliast-x86_64-apple-darwin.tar.gz"
-      sha256 "dce9ae8a54d1a94c8f55406f7a8f3708902fc7d95e54443504a25696bd07d576"
+      sha256 "9035015f3716ea048fefb0a277725e5d4920612cce1b308d75219be088bc8c77"
     end
   end
 
   resource "plugin" do
-    url "https://github.com/ChrisWoo0443/AliasT/releases/download/v0.1.0/aliast.plugin.zsh"
-    sha256 "0a67a0e454d0f1f6a9a2918000835c4ce14912914df3929003f929534d73dfed"
+    url "https://github.com/ChrisWoo0443/AliasT/releases/download/v#{version}/aliast.plugin.zsh"
+    sha256 "65c976fc6df53b557d3bc4faaf6f31a478e79385108e37862fd901c48704c70b"
   end
 
   def install
