@@ -7,16 +7,16 @@ class Aliast < Formula
   on_macos do
     if Hardware::CPU.arm?
       url "https://github.com/ChrisWoo0443/AliasT/releases/download/v#{version}/aliast-daemon-aarch64-apple-darwin.tar.gz"
-      sha256 "PLACEHOLDER_SHA256_ARM64"
+      sha256 "e44783b183acf28ff7c08b12e9be0d2e94a9d1b1bb64dff649937f9ae3e7035f"
     elsif Hardware::CPU.intel?
       url "https://github.com/ChrisWoo0443/AliasT/releases/download/v#{version}/aliast-daemon-x86_64-apple-darwin.tar.gz"
-      sha256 "PLACEHOLDER_SHA256_X86_64"
+      sha256 "dce9ae8a54d1a94c8f55406f7a8f3708902fc7d95e54443504a25696bd07d576"
     end
   end
 
   resource "plugin" do
     url "https://github.com/ChrisWoo0443/AliasT/releases/download/v#{version}/aliast.plugin.zsh"
-    sha256 "PLACEHOLDER_SHA256_PLUGIN"
+    sha256 "0a67a0e454d0f1f6a9a2918000835c4ce14912914df3929003f929534d73dfed"
   end
 
   def install
