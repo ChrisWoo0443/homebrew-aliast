@@ -15,7 +15,7 @@ class Aliast < Formula
   end
 
   resource "plugin" do
-    url "https://github.com/ChrisWoo0443/AliasT/releases/download/v#{version}/aliast.plugin.zsh"
+    url "https://github.com/ChrisWoo0443/AliasT/releases/download/v1.2.0/aliast.plugin.zsh"
     sha256 "65c976fc6df53b557d3bc4faaf6f31a478e79385108e37862fd901c48704c70b"
   end
 
