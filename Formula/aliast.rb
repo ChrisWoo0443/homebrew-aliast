@@ -1,29 +1,24 @@
 class Aliast < Formula
   desc "Ghost-text autocompletion and natural-language commands for zsh"
   homepage "https://github.com/ChrisWoo0443/AliasT"
-  version "1.2.0"
+  version "1.3.0"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.arm?
       url "https://github.com/ChrisWoo0443/AliasT/releases/download/v#{version}/aliast-aarch64-apple-darwin.tar.gz"
-      sha256 "c9d3b393151cec13f28fd2f1bfc90ec2208aea8c55e72dde1465182f11e6484a"
+      sha256 "4e678d8d9767b8fbb017d56cc8f59503a2422efde54415c6f06e89f29d6eea8e"
     elsif Hardware::CPU.intel?
       url "https://github.com/ChrisWoo0443/AliasT/releases/download/v#{version}/aliast-x86_64-apple-darwin.tar.gz"
-      sha256 "9035015f3716ea048fefb0a277725e5d4920612cce1b308d75219be088bc8c77"
+      sha256 "e9edf7d24c7b8cf17c857df2f3e25f55317779deeb29c74ac88757ca4a5bd8f2"
     end
-  end
-
-  resource "plugin" do
-    url "https://github.com/ChrisWoo0443/AliasT/releases/download/v1.2.0/aliast.plugin.zsh"
-    sha256 "65c976fc6df53b557d3bc4faaf6f31a478e79385108e37862fd901c48704c70b"
   end
 
   def install
     bin.install "aliast"
-    resource("plugin").stage do
-      (share/"aliast").install "aliast.plugin.zsh"
-    end
+    # The plugin ships inside the tarball since v1.3.0 -- one download,
+    # one checksum, no separate resource.
+    (share/"aliast").install "aliast.plugin.zsh"
   end
 
   def caveats
@@ -37,7 +32,7 @@ class Aliast < Formula
         source ~/.zshrc
 
       The daemon (aliast) will start automatically the first time
-      the plugin is loaded — no manual startup required.
+      the plugin is loaded -- no manual startup required.
     EOS
   end
 
