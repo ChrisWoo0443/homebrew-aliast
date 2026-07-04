@@ -1,16 +1,16 @@
 class Aliast < Formula
   desc "Ghost-text autocompletion and natural-language commands for zsh"
   homepage "https://github.com/ChrisWoo0443/AliasT"
-  version "1.3.0"
+  version "1.3.1"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.arm?
       url "https://github.com/ChrisWoo0443/AliasT/releases/download/v#{version}/aliast-aarch64-apple-darwin.tar.gz"
-      sha256 "4e678d8d9767b8fbb017d56cc8f59503a2422efde54415c6f06e89f29d6eea8e"
+      sha256 "84f246b458e5d80f526b620b32b7caaa0f0031fafd671a4150b3689b340ea013"
     elsif Hardware::CPU.intel?
       url "https://github.com/ChrisWoo0443/AliasT/releases/download/v#{version}/aliast-x86_64-apple-darwin.tar.gz"
-      sha256 "e9edf7d24c7b8cf17c857df2f3e25f55317779deeb29c74ac88757ca4a5bd8f2"
+      sha256 "58aaa48bc96509a29f6838e57795b672216602f10fd268733869a48494f8761c"
     end
   end
 
